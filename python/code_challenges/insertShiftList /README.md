@@ -1,5 +1,5 @@
 
-# Reverse an Array
+# Insert Shift List
 a function that takes as arguments a list and a value which the value will be added to the middle if the passed list
 
 ## Whiteboard Process
