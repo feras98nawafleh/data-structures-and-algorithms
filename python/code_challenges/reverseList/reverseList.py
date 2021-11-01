@@ -1,4 +1,3 @@
-
 def reverseList(myList):
     """
    below line is to print the passed list in reversed order
