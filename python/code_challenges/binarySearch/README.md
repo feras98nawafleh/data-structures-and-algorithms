@@ -1,5 +1,5 @@
 
-# Insert Shift List
+# Binary Search Tree
 a function that takes as arguments a sorted list and a value which the value will be searched for
 
 ## Whiteboard Process
