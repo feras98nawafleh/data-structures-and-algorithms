@@ -30,6 +30,44 @@ class LinkedList():
                 current = current.next
         return flag
 
+    def insertBefore(self, number, value):
+        if self.includes(number):
+            if self.head.value == number:
+                node = Node(value)
+                node.next = self.head
+                self.head = node
+            else:
+                current = self.head
+                previous = None
+                while current.value != number:
+                    previous = current
+                    current = current.next
+                node = Node(value)
+                previous.next = node
+                node.next = current
+        else:
+            print(f"{number} not found")
+
+    def insertAfter(self, number, value):
+        if self.includes(number):
+            if self.head.value == number:
+                node = Node(value)
+                node.next = self.head.next
+                self.head.next = node
+            else:
+                current = self.head
+                next = None
+                while current.value != number:
+                    current = current.next
+                next = current.next
+                node = Node(value)
+                current.next = node
+                node.next = next
+
+        else:
+            print(f"{number} not found")
+
+
     def __str__(self):
         output = ""
         current = self.head
@@ -48,3 +86,10 @@ if __name__ == "__main__":
     newList.insert('Hello')
     newList.insert(1.67)
     print(newList)
+    newList.insertAfter(1.67, 55)
+    print(newList)
+
+
+
+
+

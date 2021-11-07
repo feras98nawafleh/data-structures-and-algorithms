@@ -32,6 +32,30 @@ def test_includes_notfound(ll):
     excepted = False
     assert excepted == actual
 
+def test_insert_before(ll):
+    ll.insertBefore('Hello', 10)
+    expected = '{5} -> {10} -> {Hello} -> {1.67} -> NULL'
+    actual = ll.__str__()
+    assert expected == actual
+
+def test_insert_before_head(ll):
+    ll.insertBefore(5, 10)
+    expected = '{10} -> {5} -> {Hello} -> {1.67} -> NULL'
+    actual = ll.__str__()
+    assert expected == actual
+
+def test_insert_after(ll):
+    ll.insertAfter('Hello', 10)
+    expected = '{5} -> {Hello} -> {10} -> {1.67} -> NULL'
+    actual = ll.__str__()
+    assert expected == actual
+
+def test_insert_after_head(ll):
+    ll.insertAfter(5, 10)
+    expected = '{5} -> {10} -> {Hello} -> {1.67} -> NULL'
+    actual = ll.__str__()
+    assert expected == actual
+
 @pytest.fixture
 def ll():
     ll = LinkedList()
