@@ -86,7 +86,9 @@ if __name__ == "__main__":
     newList.insert('Hello')
     newList.insert(1.67)
     print(newList)
-    newList.insertAfter(1.67, 55)
+    newList.insertBefore('Hello', 55)
+    print(newList)
+    newList.insertAfter('Hello', 55)
     print(newList)
 
 
