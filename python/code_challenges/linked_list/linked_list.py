@@ -41,8 +41,10 @@ class LinkedList():
         output += "NULL"
         return output
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
 
     newList = LinkedList()
-    newList.insert(10)
+    newList.insert(5)
+    newList.insert('Hello')
+    newList.insert(1.67)
     print(newList)
