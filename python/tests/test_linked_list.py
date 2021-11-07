@@ -22,6 +22,15 @@ def test_insert_to_existing_ll(ll):
     actual = ll.__str__()
     assert expected == actual
 
+def test_includes_found(ll):
+    actual = ll.includes(5)
+    excepted = True
+    assert excepted == actual
+
+def test_includes_notfound(ll):
+    actual = ll.includes(50)
+    excepted = False
+    assert excepted == actual
 
 @pytest.fixture
 def ll():
