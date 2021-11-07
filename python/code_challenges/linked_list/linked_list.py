@@ -68,6 +68,7 @@ class LinkedList():
             print(f"{number} not found")
 
 
+
     def __str__(self):
         output = ""
         current = self.head
@@ -90,8 +91,4 @@ if __name__ == "__main__":
     print(newList)
     newList.insertAfter('Hello', 55)
     print(newList)
-
-
-
-
 
