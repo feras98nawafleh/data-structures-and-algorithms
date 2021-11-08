@@ -118,7 +118,7 @@ if __name__ == "__main__":
     newList.insertAfter('Hello', 55)
     print(newList) # {5} -> {55} -> {Hello} -> {55} -> {1.67} -> NULL
     print(newList.kthFromEnd(4)) # 5
-    print(newList.middleNode())
+    print(newList.middleNode()) # Hello
 
 
 
