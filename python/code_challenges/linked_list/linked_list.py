@@ -1,3 +1,4 @@
+import math
 class Node():
 
     def __init__(self, value):
@@ -86,6 +87,14 @@ class LinkedList():
         else:
             return ("%s must be an integer number" % k)
 
+    # STRETCH GOAL
+    def middleNode(self):
+        if self.head != None:
+            current = self.head
+            for i in range(1, math.ceil(self.length / 2)):
+                current = current.next
+            return current.value
+
     def __str__(self):
         output = "";
         current = self.head
@@ -109,6 +118,7 @@ if __name__ == "__main__":
     newList.insertAfter('Hello', 55)
     print(newList) # {5} -> {55} -> {Hello} -> {55} -> {1.67} -> NULL
     print(newList.kthFromEnd(4)) # 5
+    print(newList.middleNode())
 
 
 
