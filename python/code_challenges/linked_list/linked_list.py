@@ -106,20 +106,46 @@ class LinkedList():
         output += "NULL"
         return output
 
+def zipLists(list1, list2):
+    newList = LinkedList()
+    current1 = list1.head
+    current2 = list2.head
+    while current1 or current2:
+        if current1:
+            newList.insert(current1.value)
+            current1 = current1.next
+        if current2:
+            newList.insert(current2.value)
+            current2 = current2.next
+    return (newList)
+
 if __name__ == "__main__":
 
-    newList = LinkedList()
-    newList.insert(5)
-    newList.insert('Hello')
-    newList.insert(1.67)
-    print(newList) # {5} -> {Hello} -> {1.67} -> NULL
-    newList.insertBefore('Hello', 55)
-    print(newList) # {5} -> {55} -> {Hello} -> {1.67} -> NULL
-    newList.insertAfter('Hello', 55)
-    print(newList) # {5} -> {55} -> {Hello} -> {55} -> {1.67} -> NULL
-    print(newList.kthFromEnd(4)) # 5
-    print(newList.middleNode()) # Hello
+    # newList = LinkedList()
+    # newList.insert(5)
+    # newList.insert('Hello')
+    # newList.insert(1.67)
+    # print(newList) # {5} -> {Hello} -> {1.67} -> NULL
+    # newList.insertBefore('Hello', 55)
+    # print(newList) # {5} -> {55} -> {Hello} -> {1.67} -> NULL
+    # newList.insertAfter('Hello', 55)
+    # print(newList) # {5} -> {55} -> {Hello} -> {55} -> {1.67} -> NULL
+    # print(newList.kthFromEnd(4)) # 5
+    # print(newList.middleNode()) # Hello
 
+    List1 = LinkedList()
+    List2 = LinkedList()
+
+    List1.insert(1)
+    List1.insert(3)
+    List1.insert(5)
+
+    List2.insert(2)
+    List2.insert(4)
+    List2.insert(6)
+
+    expected = zipLists(List1, List2)
+    print(expected) # {1} -> {2} -> {3} -> {4} -> {5} -> {6} -> NULL
 
 
 

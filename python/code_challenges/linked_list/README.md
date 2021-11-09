@@ -17,3 +17,12 @@ Space: O(1)
 BigO:
 Time: O(n)
 Space: O(1)
+
+## Whiteboard Process for challenge 8
+
+![WhiteBoard](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/linked_list/WhiteBoard2.PNG)
+
+## Approach & Efficiency
+BigO:
+Time: O(n)
+Space: O(1)
