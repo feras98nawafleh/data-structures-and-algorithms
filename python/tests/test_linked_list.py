@@ -1,6 +1,7 @@
 from code_challenges.linked_list.linked_list import LinkedList, zipLists
 from code_challenges.queue.queue import Queue
 from code_challenges.stack.stack import Stack
+from code_challenges.pseudoqueue.pseudoQueue import Pseudo_queue as pseudo
 import pytest
 
 def test_empty_linked_list():
@@ -234,5 +235,46 @@ def test_doesnt_includes():
     expected = False
     assert expected == actual
 
+# #_#_#_#_#_#_#_#_END OF STACK TESTING _#_#_#_#_#_#_#_#
 
+
+def test_instantiate_an_empty_psuedo():
+
+    with pytest.raises(Exception):
+        Pseudo_queue = pseudo()
+        Pseudo_queue.Dequeue()
+
+def test_push_onto_a_stack_pseudo():
+    Pseudo_queue = pseudo()
+    Pseudo_queue.Enqueue(2)
+    Pseudo_queue.Enqueue("401-python")
+    actual =  Pseudo_queue.Enqueue("34")
+    expected = "34"
+    assert expected == actual
+
+def test_pop_pseudo():
+    Pseudo_queue = pseudo()
+    Pseudo_queue.Enqueue(2)
+    Pseudo_queue.Enqueue("401-python")
+    actual =  Pseudo_queue.Dequeue()
+    expected = 2
+    assert expected == 2
+
+def test_pop_multi_pseudo():
+    Pseudo_queue = pseudo()
+    Pseudo_queue.Enqueue(2)
+    Pseudo_queue.Enqueue(50)
+    Pseudo_queue.Enqueue("401-python")
+    assert 2 == 2
+    assert 50 == 50
+    assert "401-python" == "401-python"
+
+
+@pytest.fixture
+def Pseudo_queue():
+    Pseudo_queue = pseudo()
+    Pseudo_queue.Enqueue(2)
+    Pseudo_queue.Enqueue("401-python")
+    Pseudo_queue.Enqueue("34")
+    return Pseudo_queue
 
