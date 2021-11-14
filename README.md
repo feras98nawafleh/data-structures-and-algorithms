@@ -12,6 +12,7 @@
 | Code Challenge 5-7      | Linked List | [read06.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/linked_list/README.md) |
 | Code Challenge 9      | Stack | [read09.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/stack/README.md) |
 | Code Challenge 10      | Queue | [read10.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/queue/README.md) |
+| Code Challenge 11      | PseudoQueue | [read11.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/pseudoqueue/README.md) |
 
 
 
