@@ -2,6 +2,7 @@ from code_challenges.linked_list.linked_list import LinkedList, zipLists
 from code_challenges.queue.queue import Queue
 from code_challenges.stack.stack import Stack
 from code_challenges.pseudoqueue.pseudoQueue import Pseudo_queue as pseudo
+from code_challenges.stack_queue_brackets.brackets import validateBrackets
 import pytest
 
 def test_empty_linked_list():
@@ -277,4 +278,19 @@ def Pseudo_queue():
     Pseudo_queue.Enqueue("401-python")
     Pseudo_queue.Enqueue("34")
     return Pseudo_queue
+
+# #_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+
+def test_validate_string():
+    actual = validateBrackets('()')
+    expected = True
+    assert actual == expected
+
+    actual = validateBrackets('[()[{()}]]')
+    expected = True
+    assert actual == expected
+
+    actual = validateBrackets('((]])')
+    expected = False
+    assert actual == expected
 
