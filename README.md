@@ -14,4 +14,4 @@
 | Code Challenge 10      | Queue | [read10.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/queue/README.md) |
 | Code Challenge 11      | PseudoQueue | [read11.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/pseudoqueue/README.md) |
 | Code Challenge 12      | Animal Shelter | [read12.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/queue/README.md) |
-
+| Code Challenge 16      | Trees Max | [read16.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/treesMax/README.md) |
