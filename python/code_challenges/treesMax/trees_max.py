@@ -4,7 +4,6 @@ class Node:
         self.left = None
         self.right = None
 
-
 class BinaryTree:
     def __init__(self):
         self.root = None
@@ -23,8 +22,16 @@ class BinaryTree:
         return _traverse
 
     def find_max(self):
-        maxNum = self.pre_order()
-        return (max(maxNum(self.root)))
+        _max = self.root.value
+        def _traverse(root = self.root):
+            nonlocal _max
+            _max = root.value if root.value > _max else _max
+            if root.left:
+                _traverse(root.left)
+            if root.right:
+                _traverse(root.right)
+        _traverse()
+        return _max
 
 def create_tree():
     tree = BinaryTree()
@@ -32,7 +39,7 @@ def create_tree():
     tree.root.left=Node(5)
     tree.root.right=Node(11)
     tree.root.left.left=Node(20)
-    tree.root.left.right=Node(23)
+    tree.root.left.right=Node(50)
     tree.root.right.left=Node(6)
     tree.root.right.right=Node(30)
     return tree
