@@ -65,6 +65,21 @@ class Tree:
             return flagFound
         return _traverse
 
+def BreadthFirst(tree):
+    output = []
+    current = tree.root
+    def _traverse(root = current):
+        nonlocal current
+        output.append(current.value)
+        output.append(current.left.value)
+        output.append(current.right.value)
+        _traverse(current.left)
+        _traverse(current.right)
+    _traverse()
+    return output
+
+
+
 
 class BinarySearchTree(Tree):
     def __init__(self, tree):
@@ -83,7 +98,26 @@ class BinarySearchTree(Tree):
                 _traverse(tree.root.left)
 
 
+def BreadthFirst(tree):
+    if tree.root is None:
+        return
 
+    queue = []
+    output = []
+    queue.append(tree.root)
+
+    while(len(queue) > 0):
+
+        output.append(queue[0].value)
+        node = queue.pop(0)
+
+        if node.left is not None:
+            queue.append(node.left)
+
+        if node.right is not None:
+            queue.append(node.right)
+            
+    return output
 
 
 
@@ -109,3 +143,5 @@ if __name__ == "__main__":
     bst = BinarySearchTree(tree)
     found = bst.includes("A")
     print(found(bst.root))
+
+    print(BreadthFirst(tree))
