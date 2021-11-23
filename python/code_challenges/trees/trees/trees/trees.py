@@ -153,7 +153,7 @@ def BreadthFirst(tree):
         if node.right is not None:
             queue.Enqueue(node.right)
 
-    print(output)
+    return output
 
 
 
@@ -180,5 +180,4 @@ if __name__ == "__main__":
     found = bst.includes("A")
     print(found(bst.root))
 
-    # print(BreadthFirst(tree))
-    BreadthFirst(tree)
+    print(BreadthFirst(tree))
