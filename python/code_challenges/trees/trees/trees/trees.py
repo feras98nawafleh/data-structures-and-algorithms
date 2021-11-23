@@ -4,7 +4,6 @@ class Node:
         self.left = None
         self.right = None
 
-
 class Tree:
     def __init__(self):
         self.root = None
@@ -65,21 +64,6 @@ class Tree:
             return flagFound
         return _traverse
 
-def BreadthFirst(tree):
-    output = []
-    current = tree.root
-    def _traverse(root = current):
-        nonlocal current
-        output.append(current.value)
-        output.append(current.left.value)
-        output.append(current.right.value)
-        _traverse(current.left)
-        _traverse(current.right)
-    _traverse()
-    return output
-
-
-
 
 class BinarySearchTree(Tree):
     def __init__(self, tree):
@@ -96,28 +80,80 @@ class BinarySearchTree(Tree):
                 _traverse(root.right)
             else:
                 _traverse(tree.root.left)
+class qNode:
+  def __init__(self, value):
+    self.value = value
+    self.next = None
 
+class Queue:
+    def __init__(self):
+        self.__front = None
+        self.__rear = None
+        self.__counter = 0
+
+    def isEmpty(self):
+        return self.__counter == 0
+
+    def counter(self):
+        return self.__counter
+
+    def Front(self):
+        if not self.isEmpty():
+            toReturn = self.__front.value
+            self.Dequeue()
+            return toReturn
+
+    def peek(self):
+        if not self.isEmpty():
+            return self.__front.value
+
+    def Enqueue(self, value):
+        node = qNode(value)
+        if self.isEmpty():
+            self.__front = node
+            self.__rear = node
+            self.__counter += 1
+        else:
+            self.__rear.next = node
+            self.__rear = node
+            self.__counter += 1
+
+    def Dequeue(self):
+        self.__front = self.__front.next
+        self.__counter -= 1
+
+    def __str__(self):
+        if self.isEmpty():
+            return "this stack is empty"
+
+        response = "front -> "
+        pointer = self.__front
+        for i in range(0, self.__counter):
+            response += str(pointer.value)
+            response += " -> "
+            pointer = pointer.next
+        response += "rear"
+        return response
 
 def BreadthFirst(tree):
     if tree.root is None:
         return
 
-    queue = []
-    output = []
-    queue.append(tree.root)
+    queue = Queue()
+    output = Queue()
+    queue.Enqueue(tree.root)
 
-    while(len(queue) > 0):
+    while(queue.counter() > 0):
 
-        output.append(queue[0].value)
-        node = queue.pop(0)
-
+        node = queue.Front()
+        output.Enqueue(node.value)
         if node.left is not None:
-            queue.append(node.left)
+            queue.Enqueue(node.left)
 
         if node.right is not None:
-            queue.append(node.right)
-            
-    return output
+            queue.Enqueue(node.right)
+
+    print(output)
 
 
 
@@ -144,4 +180,5 @@ if __name__ == "__main__":
     found = bst.includes("A")
     print(found(bst.root))
 
-    print(BreadthFirst(tree))
+    # print(BreadthFirst(tree))
+    BreadthFirst(tree)
