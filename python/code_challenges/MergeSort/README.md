@@ -5,5 +5,5 @@ Taking an array of numbers and sorting them
 [BLOG.md](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/MergeSort/BLOG.md)
 
 ## Approach & Efficiency
-time complexity BigO: O(n)
+time complexity BigO: O(n*logn)
 space complexity BigO: O(n) + O(logn) = O(n).
