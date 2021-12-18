@@ -89,3 +89,5 @@ vertex4 = graph.add_node(4)
 graph.add_edge(vertex1, vertex2)
 graph.add_edge(vertex2, vertex3)
 graph.add_edge(vertex1, vertex4)
+print(graph.bfs(vertex1))
+
