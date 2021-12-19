@@ -7,6 +7,9 @@ Create the class for the graph and methods to add nodes, edges, find size, and f
 ## Approach & Efficiency
 Except for traversing, all methods have O(1) big o for time and space as the space and time consumed will be alwas the same, for traversing the big O might grow up to O (n*h) where n is the size of the graph and h is the max number of neighbors a node might have
 
+## Whiteboard Process
+[WhiteBoard](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/graphs/WhiteBoard.PNG)
+
 ## API
 
 add_node:

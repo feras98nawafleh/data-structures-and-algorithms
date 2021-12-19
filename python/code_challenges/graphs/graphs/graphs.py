@@ -56,13 +56,70 @@ class Graph:
     def size(self):
         return len(self.__adj_list)
 
+    def bfs(self, start_vertex):
+        queue = Queue()
+        result = []
+        visited = set()
+
+        queue.enqueue(start_vertex)
+        visited.add(start_vertex)
+        result.append(start_vertex.value)
+
+        while len(queue):
+            current_vertex = queue.dequeue()
+            neighbors = self.get_neighbors(current_vertex)
+
+            for edge in neighbors:
+                neighbor = edge.vertex
+
+                if neighbor not in visited:
+                    queue.enqueue(neighbor)
+                    visited.add(neighbor)
+                    result.append(neighbor.value)
+
+        return result
+
+    # Continue challenge 36
+    def bfs(self, start_vertex):
+        queue = Queue()
+        result = []
+        visited = set()
+
+        queue.enqueue(start_vertex)
+        visited.add(start_vertex)
+        result.append(start_vertex.value)
+
+        while len(queue):
+            current_vertex = queue.dequeue()
+            neighbors = self.get_neighbors(current_vertex)
+
+            for edge in neighbors:
+                neighbor = edge.vertex
+
+                if neighbor not in visited:
+                    queue.enqueue(neighbor)
+                    visited.add(neighbor)
+                    result.append(neighbor.value)
+
+        return result
+
+
+
 
 graph = Graph()
-vertex1 = graph.add_node(1)
-vertex2 = graph.add_node(2)
-vertex3 = graph.add_node(3)
-vertex4 = graph.add_node(4)
+vertex1 = graph.add_node('Pandora')
+vertex2 = graph.add_node('Arendelle')
+vertex3 = graph.add_node('Metroville')
+vertex4 = graph.add_node('Monstroplolis')
+vertex5 = graph.add_node('Narnia')
+vertex6 = graph.add_node('Naboo')
 graph.add_edge(vertex1, vertex2)
 graph.add_edge(vertex2, vertex3)
-graph.add_edge(vertex1, vertex4)
+graph.add_edge(vertex2, vertex4)
+graph.add_edge(vertex3, vertex4)
+graph.add_edge(vertex3, vertex5)
+graph.add_edge(vertex4, vertex5)
+graph.add_edge(vertex4, vertex6)
 
+# ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
+print(graph.bfs(vertex1))
