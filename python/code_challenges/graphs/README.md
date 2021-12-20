@@ -10,6 +10,8 @@ Except for traversing, all methods have O(1) big o for time and space as the spa
 ## Whiteboard Process
 [WhiteBoard](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/graphs/WhiteBoard.PNG)
 
+[WhiteBoard](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/graphs/GraphTripWhiteBoard.png)
+
 ## API
 
 add_node:
