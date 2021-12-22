@@ -12,6 +12,8 @@ Except for traversing, all methods have O(1) big o for time and space as the spa
 
 [WhiteBoard](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/graphs/GraphTripWhiteBoard.png)
 
+[WhiteBoard](https://github.com/feras98nawafleh/data-structures-and-algorithms/blob/main/python/code_challenges/graphs/graph_depth_first.png)
+
 ## API
 
 add_node:

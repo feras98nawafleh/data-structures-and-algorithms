@@ -103,7 +103,7 @@ class Graph:
 
         return result
 
-# Continue challenge 37
+    # Continue challenge 37
     def graph_trip_cost(self, graph, cities):
 
         self.graph = graph
@@ -127,58 +127,82 @@ class Graph:
 
         if not trip:
             cost = 0
-            
+
         result = f'{trip}, ${cost}'
         return result
 
+    # Continue challenge 38
+    def depth_first(self, node):
+        depth_list = []
+        depth_list.append(node.value)
 
+        if node not in self.__adj_list:
+            return 'Node does not exist'
+        elif self.__adj_list[node] == []:
+            return 'There is no neighbors'
+
+        def adding_to_list(node):
+            neighbors = self.__adj_list[node]
+
+            for edge in neighbors:
+                neighbor = edge.vertex.value
+
+                if neighbor not in depth_list:
+                    depth_list.append(neighbor)
+                    adding_to_list(edge.vertex)
+
+        adding_to_list(node)
+
+        return depth_list
 
 
 if __name__ == "__main__":
+    # graph = Graph()
+
+    # pan = graph.add_node('Pandora')
+    # nab = graph.add_node('Naboo')
+    # nar = graph.add_node('Narnia')
+    # mon = graph.add_node('Monstroplolis')
+    # are = graph.add_node('Arendelle')
+    # met = graph.add_node('Metroville')
+
+    # graph.add_edge(pan, are, 150)
+    # graph.add_edge(pan, met, 82)
+    # graph.add_edge(are, pan, 150)
+    # graph.add_edge(are, met, 99)
+    # graph.add_edge(are, mon, 42)
+    # graph.add_edge(met, pan, 82)
+    # graph.add_edge(met, are, 99)
+    # graph.add_edge(met, mon, 105)
+    # graph.add_edge(met, nab, 26)
+    # graph.add_edge(met, nar, 37)
+    # graph.add_edge(mon, are, 42)
+    # graph.add_edge(mon, met, 105)
+    # graph.add_edge(mon, nab, 73)
+    # graph.add_edge(nab, mon, 73)
+    # graph.add_edge(nab, met, 26)
+    # graph.add_edge(nab, nar, 250)
+    # graph.add_edge(nar, met, 37)
+    # graph.add_edge(nar, nab, 250)
+
+    # print(graph.graph_trip_cost(graph, [met, nab, nar]))
+
     graph = Graph()
+    vertex1 = graph.add_node('Pandora')
+    vertex2 = graph.add_node('Arendelle')
+    vertex3 = graph.add_node('Metroville')
+    vertex4 = graph.add_node('Monstroplolis')
+    vertex5 = graph.add_node('Narnia')
+    vertex6 = graph.add_node('Naboo')
+    graph.add_edge(vertex1, vertex2)
+    graph.add_edge(vertex2, vertex3)
+    graph.add_edge(vertex2, vertex4)
+    graph.add_edge(vertex3, vertex4)
+    graph.add_edge(vertex3, vertex5)
+    graph.add_edge(vertex4, vertex5)
+    graph.add_edge(vertex4, vertex6)
 
-    pan = graph.add_node('Pandora')
-    nab = graph.add_node('Naboo')
-    nar = graph.add_node('Narnia')
-    mon = graph.add_node('Monstroplolis')
-    are = graph.add_node('Arendelle')
-    met = graph.add_node('Metroville')
-
-    graph.add_edge(pan, are, 150)
-    graph.add_edge(pan, met, 82)
-    graph.add_edge(are, pan, 150)
-    graph.add_edge(are, met, 99)
-    graph.add_edge(are, mon, 42)
-    graph.add_edge(met, pan, 82)
-    graph.add_edge(met, are, 99)
-    graph.add_edge(met, mon, 105)
-    graph.add_edge(met, nab, 26)
-    graph.add_edge(met, nar, 37)
-    graph.add_edge(mon, are, 42)
-    graph.add_edge(mon, met, 105)
-    graph.add_edge(mon, nab, 73)
-    graph.add_edge(nab, mon, 73)
-    graph.add_edge(nab, met, 26)
-    graph.add_edge(nab, nar, 250)
-    graph.add_edge(nar, met, 37)
-    graph.add_edge(nar, nab, 250)
-
-    print(graph.graph_trip_cost(graph, [met, nab, nar]))
-
-# graph = Graph()
-# vertex1 = graph.add_node('Pandora')
-# vertex2 = graph.add_node('Arendelle')
-# vertex3 = graph.add_node('Metroville')
-# vertex4 = graph.add_node('Monstroplolis')
-# vertex5 = graph.add_node('Narnia')
-# vertex6 = graph.add_node('Naboo')
-# graph.add_edge(vertex1, vertex2)
-# graph.add_edge(vertex2, vertex3)
-# graph.add_edge(vertex2, vertex4)
-# graph.add_edge(vertex3, vertex4)
-# graph.add_edge(vertex3, vertex5)
-# graph.add_edge(vertex4, vertex5)
-# graph.add_edge(vertex4, vertex6)
-
-# # ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
-# print(graph.bfs(vertex1))
+    # ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
+    print(graph.bfs(vertex1))
+    # ['Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
+    print(graph.depth_first(vertex3))
